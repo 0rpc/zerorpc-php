@@ -1,0 +1,22 @@
+{
+  "name": "j5/zerorpc-php",
+  "description": "A Standard ZeroRPC client.",
+  "authors": [
+    {
+      "name": "j5",
+      "homepage": "https://github.com/j-5",
+      "role": "Developer"
+    }
+  ],
+  "version": "1.2.1",
+  "license": "MIT",
+  "require": {
+    "php": ">=5.4.0",
+    "ext-msgpack": "*",
+    "ext-zmq": "*"
+  },
+  "autoload": {
+    "classmap": ["src/"]
+  },
+  "minimum-stability": "dev"
+}
