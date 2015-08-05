@@ -1,4 +1,4 @@
-ZeroRPC PHP Client
+zerorpc PHP Client
 ===========
 
 ## Quick start
@@ -18,7 +18,7 @@ $ brew install php56-msgpack
 $ brew install php56-zmq
 ```
 
-+ Installing ZeroRPC on Ubuntu
++ Installing zerorpc on Ubuntu
 
 ```
 $ sudo pecl install channel://pecl.php.net/msgpack-0.5.5
@@ -66,4 +66,4 @@ Example 2: start async call:
 cost 3.0069580078125 s
 ```
 
-[1]: https://github.com/dotcloud/zerorpc-python
+[1]: https://github.com/0rpc/zerorpc-python
