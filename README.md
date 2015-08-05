@@ -67,3 +67,7 @@ cost 3.0069580078125 s
 ```
 
 [1]: https://github.com/0rpc/zerorpc-python
+
+## Credits
+Origin main author of this repo is: [@liangshan](https://github.com/liangshan)  
+Other contributors: [@wenzong](https://github.com/wenzong), [@thewinterwind](https://github.com/thewinterwind)
