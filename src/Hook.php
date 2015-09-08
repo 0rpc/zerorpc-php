@@ -52,7 +52,13 @@ class ConfigMiddleware
         return function ($name, $version) {
             $configName = $this->getConfigName($name);
             $version = $this->getVersion($name, $version);
-            return $this->config[$configName][$version];
+            $config = $this->config[$configName][$version];
+            if (is_array($config)) {
+                $endpoint = $config[array_rand($config)];
+            } else {
+                $endpoint = $config;
+            }
+            return $endpoint;
         };
     }
 
