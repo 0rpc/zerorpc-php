@@ -68,6 +68,10 @@ cost 3.0069580078125 s
 
 [1]: https://github.com/0rpc/zerorpc-python
 
+## Know Issue
+
+We assume most of the PHP usage scenario is webserver, so `LostRemoteException` is not implemented, and because of that `heartbeat` is disabled.
+
 ## Credits
-Origin main author of this repo is: [@liangshan](https://github.com/liangshan)  
+Origin main author of this repo is: [@liangshan](https://github.com/liangshan)
 Other contributors: [@wenzong](https://github.com/wenzong), [@thewinterwind](https://github.com/thewinterwind)
