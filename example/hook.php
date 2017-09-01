@@ -29,6 +29,9 @@ $middleware = new ConfigMiddleware(array(
 $context = new Context();
 $context->registerHook('resolve_endpoint', $middleware->resolveEndpoint());
 $context->registerHook('before_send_request', $middleware->beforeSendRequest());
+$context->registerHook('on_complete', function() {
+    echo 'Do something after request finished' . PHP_EOL;
+});
 
 $client = new Client("time", '1.0', $context);
 print $client->time() . PHP_EOL;
