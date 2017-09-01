@@ -8,7 +8,7 @@ class Context extends \ZMQContext
     private $hooks = array(
         'resolve_endpoint' => array(),
         'before_send_request' => array(),
-        'on_complete' => array(),
+        'after_response' => array(),
     );
 
     private static $instance = null;
@@ -44,9 +44,9 @@ class Context extends \ZMQContext
         }
     }
 
-    public function hookOnComplete($event, $client)
+    public function hookAfterResponse($event, $client)
     {
-        foreach ($this->hooks['on_complete'] as $func) {
+        foreach ($this->hooks['after_response'] as $func) {
             $func($event, $client);
         }
     }
@@ -104,7 +104,7 @@ class Client
         if ($events) {
             $recv = $this->socket->recvMulti();
             $event = Response::deserialize($recv);
-            $this->context->hookOnComplete($event, $this);
+            $this->context->hookAfterResponse($event, $this);
             return $event->getContent(); 
         } else {
             throw new TimeoutException('Timout after ' . $this->timeout .' ms');
@@ -116,7 +116,7 @@ class Client
         $event = new Request($name, $args);
         $this->context->hookBeforeSendRequest($event, $this);
         Channel::startRequest($this->socket, $event, $response);
-        $this->context->hookOnComplete($event, $this);
+        $this->context->hookAfterResponse($event, $this);
     }
 
 }

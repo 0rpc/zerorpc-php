@@ -29,7 +29,7 @@ $middleware = new ConfigMiddleware(array(
 $context = new Context();
 $context->registerHook('resolve_endpoint', $middleware->resolveEndpoint());
 $context->registerHook('before_send_request', $middleware->beforeSendRequest());
-$context->registerHook('on_complete', function() {
+$context->registerHook('after_response', function() {
     echo 'Do something after request finished' . PHP_EOL;
 });
 
