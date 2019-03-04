@@ -92,7 +92,7 @@ class Client
             $timeout = $this->timeout;
         }
 
-        $event = new Request($name, $args);
+        $event = new Request($name, $args, uniqid(posix_getpid()));
         $this->context->hookBeforeSendRequest($event, $this);
         $this->socket->sendMulti($event->serialize());
 
